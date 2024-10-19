@@ -107,6 +107,7 @@ footer {
 .value a {
   color: #0000ee;
   text-decoration: underline;
+  word-break: break-all;
 }
 
 .value a:hover {
