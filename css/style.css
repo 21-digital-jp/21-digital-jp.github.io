@@ -1,0 +1,155 @@
+/* ============================================================
+   RESET & GLOBAL STYLES
+   ============================================================ */
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+  
+  /* ============================================================
+     HEADER STYLES
+     固定ヘッダー（上部100px余白）、透明背景
+     ============================================================ */
+  header {
+    width: 100%;
+    position: fixed;
+    top: 100px; /* 画面上部から100pxの余白 */
+    left: 0;
+    z-index: 1000;
+    background-color: transparent;
+  }
+  /* ヘッダー内コンテナ：中央寄せ＆左右スペース分配 */
+  .header-container {
+    max-width: 960px;  /* 統一されたコンテンツ幅 */
+    margin: 0 auto;    /* 中央寄せ */
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header-left img {
+    max-width: 45%;
+  }
+  .header-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .header-right a {
+    color: inherit;
+    text-decoration: none;
+    margin-left: 1rem;
+  }
+  
+  /* ============================================================
+     MAIN CONTENT STYLES
+     メインコンテンツ（会社概要）の設定
+     ============================================================ */
+  .main-container {
+    max-width: 960px;                   /* 統一コンテンツ幅 */
+    margin: 220px auto 50px auto;        /* 上部220px、下部50pxの余白 */
+    padding: 0 1rem;
+  }
+  .main-right {
+    width: 100%;
+    padding: 1rem 0;
+  }
+  .heading {
+    text-align: left;
+    margin-bottom: 1rem;
+  }
+  /* 各情報項目のレイアウト */
+  .info {
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+  .info-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+  }
+  .info-item:last-child {
+    border-bottom: none;
+  }
+  .value {
+    width: 65%;
+  }
+  /* リンク：通常下線付き、ホバー時は下線消し */
+  .value a {
+    color: #0000ee;
+    text-decoration: underline;
+  }
+  .value a:hover {
+    text-decoration: none;
+  }
+  
+  /* ============================================================
+     FOOTER STYLES
+     フッターは左右分割、同一コンテンツ幅で配置
+     ============================================================ */
+  footer {
+    background-color: transparent;
+    padding: 1rem 0;
+  }
+  .footer-container {
+    max-width: 960px; /* ヘッダー、メインと同じ幅 */
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-left p,
+  .footer-right p {
+    margin: 0;
+  }
+  /* フッター内リンク：通常下線付き、ホバー時は下線消し */
+  .footer-container a {
+    color: #0000ee;
+    text-decoration: underline;
+  }
+  .footer-container a:hover {
+    text-decoration: none;
+  }
+  
+  /* ============================================================
+     RESPONSIVE STYLES
+     スマホ表示時のレイアウト調整：
+     ヘッダーは左右レイアウトを維持
+     ============================================================ */
+  @media (max-width: 768px) {
+    .header-container {
+      flex-direction: row; /* 常にrowレイアウト */
+      justify-content: space-between;
+      align-items: center;
+    }
+    .header-left img {
+      max-width: 60%;
+    }
+    .main-container {
+      max-width: 100%;
+      margin: 220px auto 50px auto;
+      padding: 0 1rem;
+    }
+    /* 必要に応じて、情報項目の幅を全体にする */
+    .label,
+    .value {
+      width: 100%;
+    }
+    /* フッターは縦方向に配置 */
+    .footer-container {
+      flex-direction: column;
+      text-align: center;
+    }
+    .footer-left,
+    .footer-right {
+      margin: 0.5rem 0;
+    }
+  }
+  
